@@ -1,8 +1,25 @@
 
+var globals = {
+	factor:1,
+	yDir:1,
+	xDir:1,
+	dist:20 //cm
+};
+
+var master = {
+	params: {
+		interval:1/300,
+		filterSize:3,
+		factor:1,
+		mu:0.1,
+		damp:0.4,
+		gravity:true
+	}
+};
 
 
 
-var utility = new Utility();
+
 	
 var Accelerometer = function (params, obj) {
 

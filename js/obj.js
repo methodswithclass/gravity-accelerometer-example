@@ -1,7 +1,8 @@
 
 
 
-
+var circle = "cicrle";
+var square = "square";
 
 
 var Obj = function (parent) {
@@ -9,17 +10,17 @@ var Obj = function (parent) {
 	
 	var self = this;
 	
-	this.shape = params.circle;
+	this.shape = circle;
 	this.radius = 50;
 	
 	this.container = document.createElement("div");
 	this.container.classList.add("obj");
 	this.container.style.width = 2*this.radius + "px";
 	this.container.style.height = 2*this.radius + "px";
-	if (this.shape == params.circle) 
+	if (this.shape == circle) 
 		this.container.style.borderRadius = this.radius + "px";
 	
-	this.parent = parent.arena;
+	this.parent = parent;
 	
 	this.getXBound = function () {
 		self.xMax = $(self.parent).width()/2 - $(this.container).width()/2;
