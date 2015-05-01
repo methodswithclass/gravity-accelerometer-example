@@ -2,4 +2,8 @@
 
 jQuery is a dependency
 
-These files are given currently without documentation. They are preliminary. Documentation and instructions on use will follow.
+js/index.js contains usage
+
+accel.getMotion() takes a callback to attach position, velocity, and acceleration from the accel object to the movable object on screen.
+
+must attach accel.motion() to the window.devicemotion function, this is the heart of the mechanism to detect device motion.
