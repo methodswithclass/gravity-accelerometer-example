@@ -134,21 +134,6 @@ var Accelerometer = function (params, obj) {
 			vel1 = vel1.multiply(1-mu);	
 		}
 	}
-	
-	
-	
-	var reset = function () {
-		
-		filterBucket = [];
-		
-		unfiltered = new Vector(0,0,0);
-		accel0 = new Vector(0,0,0);
-		vel0 = new Vector(0,0,0);
-		pos0 = new Vector(0,0,0);
-		startTime = 0;
-		
-		updateMotion(self.pos0, self.vel0);	
-	}
 
 	var updateMotion = function (pos, vel, acc) {
 		
@@ -262,6 +247,19 @@ var Accelerometer = function (params, obj) {
 		}
 		
 		//self.reset();
+	}
+
+	this.reset = function () {
+		
+		filterBucket = [];
+		
+		unfiltered = new Vector(0,0,0);
+		accel0 = new Vector(0,0,0);
+		vel0 = new Vector(0,0,0);
+		pos0 = new Vector(0,0,0);
+		startTime = 0;
+		
+		updateMotion(pos0, vel0, accel0);	
 	}
 	
 	this.getMotion = function (func) {

@@ -58,9 +58,9 @@ var Obj = function (parent) {
 	
 	var relPos = {x:0, y:0};
 	
-	var position = {x:0, y:0};
-	var velocity = {x:0, y:0};
-	var acceleration = {x:0, y:0};
+	this.position = {x:0, y:0};
+	this.velocity = {x:0, y:0};
+	this.acceleration = {x:0, y:0};
 	
 	this.setPosition = function (pos) {
 		relPos = pos;
@@ -68,12 +68,12 @@ var Obj = function (parent) {
 		self.getXBound();
 		self.getYBound();
 		
-		position = {x:self.xMax + relPos.x, y:self.yMax + relPos.y};
+		self.position = {x:self.xMax + relPos.x, y:self.yMax + relPos.y};
 		
 		//con.log("position: " + self.position.x + " " + self.position.y);
 		
-		container.style.left = utility.truncate(position.x,0) + "px";
-		container.style.top = utility.truncate(position.y,0) + "px";
+		container.style.left = utility.truncate(self.position.x,0) + "px";
+		container.style.top = utility.truncate(self.position.y,0) + "px";
 	}
 	
 	this.setVelocity = function (vel) {
@@ -86,6 +86,11 @@ var Obj = function (parent) {
 		self.acceleration = acc;
 	}
 
+	this.absolutePos = function () {
+
+		return relPos;
+	}
+
 	this.hide = function () {
 
 		$(container).hide();
@@ -94,21 +99,6 @@ var Obj = function (parent) {
 	this.show = function () {
 
 		$(parent).append(container);
-	}
-
-	this.getPosition = function () {
-
-		return position;
-	}
-
-	this.getVelocity = function () {
-
-		return velocity;
-	}
-
-	this.getAcceleration = function () {
-
-		return acceleration;
 	}
 	
 	this.setPosition(relPos);
