@@ -14,8 +14,7 @@ $(document).ready(function() {
 	var obj = new Obj(arena);
 	var accel = new Accelerometer(master.params, obj);
 
-
-	$(arena).append(obj.container);
+	obj.show();
 
 	accel.getMotion(function (position, velocity, acceleration) {
 				
