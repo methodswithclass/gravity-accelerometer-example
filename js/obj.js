@@ -35,7 +35,7 @@ var Obj = function (parent) {
 	var shape = circle;
 	var radius = 50;
 	
-	container = document.createElement("div");
+	var container = document.createElement("div");
 	container.classList.add("obj");
 	container.style.width = 2*radius + "px";
 	container.style.height = 2*radius + "px";
