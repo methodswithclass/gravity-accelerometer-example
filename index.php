@@ -5,7 +5,6 @@
 	<link rel="stylesheet" href="http://code.methodswithclass.com/api/classes.css">
 
 	<script src="js/jquery-1.11.3.min.js"></script>
-	<!-- <script src="js/angular.min.js"></script> -->
 
 	<script>
 
@@ -31,8 +30,10 @@
 
 			var g = mcaccel.global;
 
+			//these values must be set per session on different devices through some calibration means
 			g.setFactor(g.const.factorG, 0.01);
 			g.setAxis(g.const.x, -1);
+			g.setAxis(g.const.y, 1);
 
 			var obj = new mcaccel.object({
 				name:"object",
@@ -76,15 +77,8 @@
 			<div id="object"></div>
 		</div>
 	</div>
-<!-- 
-	<console ng-attr-vis="hide"></console>
- -->
 
-	<!-- <script src="js/app.js"></script> -->
-	<!-- <script src="http://code.methodswithclass.com/api/console-1.js"></script> -->
 	<script src="http://code.methodswithclass.com/api/accelerometer-1.js"></script>
-	<!-- <script src="js/accelerometer-1.js"></script> -->
-	
 
 </body>
 
