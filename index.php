@@ -32,6 +32,7 @@
 			var g = mcaccel.global;
 
 			g.setFactor(g.const.session, 0.001);
+			g.setAxis(g.axis.x, -1);
 
 			var obj = new mcaccel.object({
 				name:"object",
