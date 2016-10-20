@@ -43,7 +43,7 @@
 
 			accel.getMotion(function (pos, vel, accel) {
 
-				console.log("set position", pos.x, "   ", pos.y);
+				//console.log("set position", pos.x, "   ", pos.y);
 
 				obj.setPosition(pos);
 				obj.setVelocity(vel);

@@ -32,18 +32,24 @@
 			}
 			else {
 
+				//console.log("average", array.length, array[0]);
+
 				for (i in array) {
 					for (j in array[i]) {
 						sumArray[j] += array[i][j];
 					}
 				}
 
+				//console.log("average", sumArray);
+
 				var result = {};
 
 				for (k in sumArray) {
 
-					result[k] = sumArray[k]/sumArray.length;
+					result[k] = sumArray[k]/array.length;
 				}
+
+				//console.log("average", result);
 
 				return result;
 
@@ -122,40 +128,6 @@
 
 	}
 
-	var accelglobal = {
-
-		const:{
-			factorG:"global",
-			factorS:"session",
-			x:"i",
-			y:"j"
-		},
-
-		setFactor:function (type, _factor) {
-
-			factor[type] = Math.abs(_factor);
-			console.log("utility set factor", type, _factor);
-		},
-
-		getFactor:function (type) {
-
-			if (type) return Math.abs(factor[type])
-			else return Math.abs(factor.global*factor.session)
-		},
-
-		setAxis:function (_axis, value) {
-
-			axis[_axis] = value >= 0 ? 1 : -1;
-			console.log("utility set axis", _axis, value);
-		},
-
-		getAxis:function (_axis) {
-
-			return axis[_axis] >= 0 ? 1 : -1;
-		}
-
-	}
-
 	var vector = function (x,y,time) {
 
 		var self = this;
@@ -163,7 +135,7 @@
 		self.x = x;
 		self.y = y;
 		self.time = time;
-		
+
 		self.len = function () {
 			return Math.sqrt(self.x*self.x + self.y*self.y);
 		}
@@ -200,6 +172,57 @@
 		
 		self.printValues = function () {
 			return "x: " + self.x + " y: " + self.y + " t: " + self.time;
+		}
+
+	}
+
+	var accelglobal = {
+
+		const:{
+			factorG:"global",
+			factorS:"session",
+			x:"i",
+			y:"j"
+		},
+
+		average:function (array) {
+
+			var sumX = 0;
+			var sumY = 0;
+
+			for (i in array) {
+
+				sumX += array[i].x;
+				sumY += array[i].y;
+			}
+
+			//console.log("average", sumX/array.length);
+
+			return new vector(sumX/array.length, sumY/array.length, array[array.length-1].time);
+
+		},
+
+		setFactor:function (type, _factor) {
+
+			factor[type] = Math.abs(_factor);
+			console.log("utility set factor", type, _factor);
+		},
+
+		getFactor:function (type) {
+
+			if (type) return Math.abs(factor[type])
+			else return Math.abs(factor.global*factor.session)
+		},
+
+		setAxis:function (_axis, value) {
+
+			axis[_axis] = value >= 0 ? 1 : -1;
+			console.log("utility set axis", _axis, value);
+		},
+
+		getAxis:function (_axis) {
+
+			return axis[_axis] >= 0 ? 1 : -1;
 		}
 
 	}
@@ -452,7 +475,7 @@
 
 		var integrate = function (accelArray) {
 				
-			accel1.set(util.average(accelArray));
+			accel1.set(g.average(accelArray));
 			
 			if (accel1.len() < threshold) {
 				accel1.set(new vector(0,0,accel1.time));
