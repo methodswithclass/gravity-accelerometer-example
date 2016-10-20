@@ -22,7 +22,7 @@
 	//object parameters, shape is only dependent value, other values can be used to change how the object looks, or it can be hardcoded
 	var objParams = {
 		shape:"circle",
-		size:100,
+		size:200,
 		color:"black"
 	}
 
