@@ -13,7 +13,7 @@
 		var params = {
 			interval:2,
 			filterSize:3,
-			factor:1,
+			factor:0.8,
 			mu:0.1,
 			damp:0.4,
 			gravity:true,
@@ -31,7 +31,7 @@
 
 			var g = mcaccel.global;
 
-			g.setFactor(g.const.factorS, 0.0001);
+			g.setFactor(g.const.factorS, 1e-6);
 			g.setAxis(g.const.x, -1);
 
 			var obj = new mcaccel.object({
