@@ -2,26 +2,15 @@
 
 <head>
 
-	<link rel="stylesheet" href="css/classes.css">
-    <link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="http://code.methodswithclass.com/api/classes.css">
 
 	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/scripts.js"></script>
 
 	<script>
 
-	//these values need to be calibrated for each device
-	var globals = {
-		factor:0.005,
-		xDir:1,
-		yDir:-1
-	}
-
-	var utility = new Utility();
-
 	//accelerometer calculation and integration parameters
 	var params = {
-		interval:1/600,
+		interval:2,
 		filterSize:3,
 		factor:1,
 		mu:0.1,
@@ -39,31 +28,31 @@
 
 	$(document).ready(function () {
 
-		//load dom elements into backend code
-		var domObject = $("#object")[0];
-		var arena = $("#container")[0];
-
-		var object = new objectFactory({
+		var obj = new mcaccel.object({
 			name:"object",
-			object:domObject,
-			arena:arena,
+			object:$("#object")[0],
 			params:objParams
 		});
 			
-		var accel = new accelerometer({
+		var accel = new mcaccel.accelerometer({
 			name:"accel",
-			params:params,
-			object:object
+			object:obj,
+			params:params
 		});
 
-		accel.initialize({
-			arena:arena
+		accel.getMotion(function (pos, vel, accel) {
+
+			obj.setPosition(pos);
+			obj.setVelocity(vel);
+			obj.setAcceleration(accel);
+
 		});
 
 		//rubber meets road
 		window.ondevicemotion = accel.motion;
 
 		//begin integrating for device position and updating position of object
+		accel.reset();
 		accel.start();
 
 	});
@@ -72,22 +61,22 @@
 
 	<style>
 
-		#container {
-
-			position:absolute;
-			top:0;
-			left:0;
-			width:100%;
-			height:100%;
-		}
-
 	</style>
 
 </head>
 
 <body>
 
-	<div id="container"><div class="absolute width-200 height-200 rounded100 black-back" id="object"></div></div>
+	<div class="absolute fill black-back">
+		<div class="absolute width95 height95 center white-back lowered-dark" id="arena">
+			<div id="object"></div>
+		</div>
+	</div>
+
+
+	<!-- <script src="http://wcode.methodswithclass.com/api/accelerometer-1.js"></script> -->
+	<script src="js/accelerometer-1.js"></script>
+	
 
 </body>
 
