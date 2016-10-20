@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="http://code.methodswithclass.com/api/classes.css">
 
 	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/angular.min.js"></script>
+	<!-- <script src="js/angular.min.js"></script> -->
 
 	<script>
 
@@ -76,12 +76,12 @@
 			<div id="object"></div>
 		</div>
 	</div>
-
+<!-- 
 	<console ng-attr-vis="hide"></console>
+ -->
 
-
-	<script src="js/app.js"></script>
-	<script src="http://code.methodswithclass.com/api/console-1.js"></script>
+	<!-- <script src="js/app.js"></script> -->
+	<!-- <script src="http://code.methodswithclass.com/api/console-1.js"></script> -->
 	<!-- <script src="http://code.methodswithclass.com/api/accelerometer-1.js"></script> -->
 	<script src="js/accelerometer-1.js"></script>
 	
