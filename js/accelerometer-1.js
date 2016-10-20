@@ -514,7 +514,7 @@
 					unfiltered.set(new vector(axis[g.const.x]*factor*raw.abs.x, axis[g.const.y]*factor*raw.abs.y, (e.timeStamp - startTime)/1000));
 				}
 
-				console.log("raw", "x", raw.gravity.x, "y", raw.gravity.y);
+				//console.log("raw", "x", raw.gravity.x, "y", raw.gravity.y);
 			}
 		}
 
@@ -570,7 +570,7 @@
 		}
 		
 		self.getMotion = function (func) {
-			
+
 			window.addEventListener("accel", function (e) {
 				func(e.detail.pos, e.detail.vel, e.detail.acc);
 			}, false);
