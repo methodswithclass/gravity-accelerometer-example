@@ -503,9 +503,9 @@
 
 		self.updateParams = function (p) {
 
-			factor = p.factor || factor;
-			xDir = p.xDir || xDir;
-			yDir = p.yDir || yDir;
+			factor = g.getFactor()*p.factor || factor;
+			xDir = g.getAxis(g.const.x) || xDir;
+			yDir = g.getAxis(g.const.y) || yDir;
 			threshold = factor*0.5 || threshold;
 			mu = p.mu || mu;
 			damp = p.damp || damp;
