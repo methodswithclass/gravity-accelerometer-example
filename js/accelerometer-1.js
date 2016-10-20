@@ -409,8 +409,8 @@
 		var filterBucket = [];
 
 		var factor = g.getFactor()*p.factor || 1;
-		var xDir = p.getAxis(g.const.x) || 1;
-		var yDir = p.Axis(g.const.y) || 1;
+		var xDir = g.getAxis(g.const.x) || 1;
+		var yDir = g.getAxis(g.const.y) || 1;
 		var threshold = factor*0.5;
 		var mu = p.mu || 0.5;
 		var damp = p.damp || 0.5;
