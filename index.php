@@ -31,7 +31,7 @@
 
 			var g = mcaccel.global;
 
-			g.setFactor(g.const.factorS, 1e-6);
+			g.setFactor(g.const.factorS, 1e-9);
 			g.setAxis(g.const.x, -1);
 
 			var obj = new mcaccel.object({
