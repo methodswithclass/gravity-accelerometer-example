@@ -82,8 +82,8 @@
 
 	<!-- <script src="js/app.js"></script> -->
 	<!-- <script src="http://code.methodswithclass.com/api/console-1.js"></script> -->
-	<!-- <script src="http://code.methodswithclass.com/api/accelerometer-1.js"></script> -->
-	<script src="js/accelerometer-1.js"></script>
+	<script src="http://code.methodswithclass.com/api/accelerometer-1.js"></script>
+	<!-- <script src="js/accelerometer-1.js"></script> -->
 	
 
 </body>
