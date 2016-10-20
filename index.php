@@ -29,6 +29,10 @@
 
 		$(document).ready(function () {
 
+			var g = mcaccel.global;
+
+			g.setFactor(g.const.session, 0.001);
+
 			var obj = new mcaccel.object({
 				name:"object",
 				object:$("#object")[0],
@@ -43,7 +47,7 @@
 
 			accel.getMotion(function (pos, vel, accel) {
 
-				console.log("set position", pos.x, "   ", pos.y);
+				//console.log("set position", pos.x, "   ", pos.y);
 
 				obj.setPosition(pos);
 				obj.setVelocity(vel);
@@ -72,7 +76,7 @@
 		</div>
 	</div>
 
-	<console ng-attr-vis="show"></console>
+	<console ng-attr-vis="hide"></console>
 
 
 	<script src="js/app.js"></script>
