@@ -28,7 +28,7 @@
 
 		$(document).ready(function () {
 
-			var g = mcaccel.global;
+			var g = mcaccel.utility;
 
 			//these values must be set per session on different devices through some calibration means
 			g.setFactor(g.const.factorG, 0.01);
@@ -36,24 +36,24 @@
 			g.setAxis(g.const.y, 1);
 
 			var obj = new mcaccel.object({
-				name:"object",
+				id:"object",
 				object:$("#object")[0],
 				params:objParams
 			});
 				
 			var accel = new mcaccel.accelerometer({
-				name:"accel",
+				id:"accel",
 				object:obj,
 				params:params
 			});
 
-			accel.getMotion(function (pos, vel, accel) {
+			accel.getMotion("accel", function (id, pos, vel, acc) {
 
-				//console.log("set position", pos.x, "   ", pos.y);
+				console.log("set position", id, pos.x, "   ", pos.y);
 
 				obj.setPosition(pos);
 				obj.setVelocity(vel);
-				obj.setAcceleration(accel);
+				obj.setAcceleration(acc);
 
 			});
 
@@ -70,7 +70,7 @@
 
 </head>
 
-<body ng-app="accelerometer">
+<body>
 
 	<div class="absolute fill black-back">
 		<div class="absolute width95 height95 center white-back lowered-dark" id="arena">
@@ -79,6 +79,7 @@
 	</div>
 
 	<script src="http://code.methodswithclass.com/api/accelerometer-1.js"></script>
+	<!-- <script src="js/accelerometer-1.js"></script> -->
 
 </body>
 
