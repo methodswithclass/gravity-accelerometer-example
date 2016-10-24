@@ -2,10 +2,10 @@
 
 <head>
 
+	<!-- this module is not a dependency for accelerometer-1.js -->
 	<link rel="stylesheet" href="http://code.methodswithclass.com/api/classes.css">
 
 	<script src="http://code.methodswithclass.com/api/accelerometer-1.js"></script>
-	<!-- <script src="js/accelerometer-1.js"></script> -->
 
 	<script>
 
