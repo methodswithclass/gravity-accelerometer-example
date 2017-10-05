@@ -5,7 +5,21 @@
 	<!-- this module is not a dependency for accelerometer-1.js -->
 	<link rel="stylesheet" href="http://code.methodswithclass.com/api/classes.css">
 
-	<script src="http://code.methodswithclass.com/api/accelerometer-1.js"></script>
+	<!-- inject:head:css -->
+
+	<!-- endinject -->
+
+
+	<!-- inject:head:js -->
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jquery.scrollTo/jquery.scrollTo.js"></script>
+    <script src="../bower_components/hammerjs/hammer.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- endinject -->
+
 
 	<script>
 
@@ -45,12 +59,13 @@
 
 				//this element is going to be attached to the accelerometer data coming from the device and respond to changes
 				var object = document.getElementById("object");
+				var arena = document.getElementById("arena");
 
 
 				//this is the wrapper object around the DOM element called from accelerometer-1.js
 				var obj = new mcaccel.object({
 					id:"object", // name of wrapper object for DOM element, can be anything
-					object:object, //this is a dom element, it needs a parent element that will define the boundaries of it's motion
+					arena:arena, //this is a dom element, it needs a parent element that will define the boundaries of it's motion
 					params:objParams //inject object parameters
 				});
 					
@@ -98,6 +113,15 @@
 			<div id="object"></div>
 		</div>
 	</div>
+
+
+	<script src="http://code.methodswithclass.com/api/accelerometer/1.2/accelerometer.js"></script>
+
+
+	<!-- inject:js -->
+
+	<!-- endinject -->
+
 
 </body>
 
