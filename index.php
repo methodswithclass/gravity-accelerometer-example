@@ -5,7 +5,8 @@
 	<!-- this module is not a dependency for accelerometer-1.js -->
 	<link rel="stylesheet" href="http://code.methodswithclass.com/api/classes.css">
 
-	<script src="http://code.methodswithclass.com/api/accelerometer-1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 
 	<script>
 
@@ -45,12 +46,13 @@
 
 				//this element is going to be attached to the accelerometer data coming from the device and respond to changes
 				var object = document.getElementById("object");
+				var arena = document.getElementById("arena");
 
 
 				//this is the wrapper object around the DOM element called from accelerometer-1.js
 				var obj = new mcaccel.object({
 					id:"object", // name of wrapper object for DOM element, can be anything
-					object:object, //this is a dom element, it needs a parent element that will define the boundaries of it's motion
+					arena:arena, //this is a dom element, it needs a parent element that will define the boundaries of it's motion
 					params:objParams //inject object parameters
 				});
 					
@@ -98,6 +100,10 @@
 			<div id="object"></div>
 		</div>
 	</div>
+
+
+	<script src="http://code.methodswithclass.com/api/accelerometer/1.2/accelerometer.js"></script>
+
 
 </body>
 
