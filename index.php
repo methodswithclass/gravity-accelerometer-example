@@ -3,7 +3,7 @@
 <head>
 
 	<!-- this module is not a dependency for accelerometer-1.js -->
-	<link rel="stylesheet" href="http://code.methodswithclass.com/api/classes.css">
+	<link rel="stylesheet" href="http://code.methodswithclass.com/api/classes/2.0/classes.css">
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
